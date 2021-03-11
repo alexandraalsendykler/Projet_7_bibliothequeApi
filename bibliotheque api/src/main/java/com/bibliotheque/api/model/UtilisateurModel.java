@@ -1,5 +1,30 @@
 package com.bibliotheque.api.model;
 
-public interface UtilisateurModel {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "utilisateur")
+
+public class UtilisateurModel {
+
+	@Id
+	@Column(name = "idUtilisateur")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	private String prenom;
+
+	private String nom;
+
+	private String email;
+	private String MotDePasse;
 
 }
