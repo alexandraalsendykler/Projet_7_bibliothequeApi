@@ -1,5 +1,5 @@
 package com.bibliotheque.api.model;
 
-public interface ExemplaireModel {
+public class ExemplaireModel {
 
 }

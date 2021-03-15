@@ -1,5 +1,5 @@
 package com.bibliotheque.api.controller;
 
-public interface ExemplaireController {
+public class ExemplaireController {
 
 }

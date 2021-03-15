@@ -1,5 +1,5 @@
 package com.bibliotheque.api.repository;
 
-public interface UtilisateurRepository {
+public class UtilisateurRepository {
 
 }

@@ -1,5 +1,5 @@
 package com.bibliotheque.api.controller;
 
-public interface PretController {
+public class PretController {
 
 }
