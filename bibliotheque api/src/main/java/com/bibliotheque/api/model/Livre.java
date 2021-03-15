@@ -11,20 +11,20 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "utilisateur")
-
-public class UtilisateurModel {
+@Table(name = "livre")
+public class Livre {
 
 	@Id
-	@Column(name = "idUtilisateur")
+	@Column(name = "idLivre") 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	private String prenom;
 
-	private String nom;
+	private String titre;
 
-	private String email;
-	private String MotDePasse;
+
+	private String auteur;
+
+	private String resume;
 
 }

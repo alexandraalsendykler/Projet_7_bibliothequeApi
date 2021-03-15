@@ -1,5 +1,5 @@
 package com.bibliotheque.api.model;
 
-public class PretModel {
+public class Exemplaire {
 
 }
