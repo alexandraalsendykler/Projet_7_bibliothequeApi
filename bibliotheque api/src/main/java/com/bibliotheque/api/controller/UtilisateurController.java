@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,9 +21,9 @@ public class UtilisateurController {
 	private UtilisateurService utilisateurService;
 	@Autowired
 	private UtilisateurRepository utilisateurRepository;
-	
-	@GetMapping("/password") 
-	public void password(){
+
+	@GetMapping("/password")
+	public void password() {
 		Iterable<Utilisateur> utilisateurs = utilisateurRepository.findAll();
 		for (Utilisateur utilisateur : utilisateurs) {
 			PasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -33,11 +32,10 @@ public class UtilisateurController {
 			utilisateurRepository.save(utilisateur);
 		}
 	}
-	
-	@GetMapping("/seconnecter") 
-	@ResponseBody
-	public Utilisateur getLogin(@RequestParam(value="email", required = true) String email) { 
 
+	@GetMapping("/seconnecter")
+	@ResponseBody
+	public Utilisateur getLogin(@RequestParam(value = "email", required = true) String email) {
 		List<Utilisateur> utilisateurs = utilisateurService.getLogin(email);
 		for (Utilisateur utilisateur : utilisateurs) {
 			return utilisateur;
