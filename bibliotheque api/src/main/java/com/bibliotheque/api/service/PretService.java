@@ -32,4 +32,6 @@ public class PretService {
 		Pret savePret = pretRepository.save(pret);
 		return savePret;
 	}
+
+
 }

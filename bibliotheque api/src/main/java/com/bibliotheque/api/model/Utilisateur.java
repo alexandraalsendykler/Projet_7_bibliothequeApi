@@ -1,5 +1,6 @@
 package com.bibliotheque.api.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -23,18 +24,18 @@ public class Utilisateur {
 	@Id
 	@Column(name = "idUtilisateur")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
+	private Integer id;
+	
 	private String prenom;
 	private String nom;
 	private String email;
 	private String motDePasse;
 	
 	@OneToMany(cascade = {CascadeType.ALL})
-	@JoinColumn(name = "pret")
-	private List<Pret> prets;
+	@JoinColumn(name = "idUtilisateur")
+	private List<Pret> prets = new ArrayList<>(); 
 	
 
-	private Integer id;
 	public List<Pret> getPrets() {
 		return prets;
 	}
