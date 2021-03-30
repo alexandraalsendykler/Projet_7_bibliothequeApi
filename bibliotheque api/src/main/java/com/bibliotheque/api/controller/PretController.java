@@ -1,17 +1,24 @@
 package com.bibliotheque.api.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.bibliotheque.api.model.Pret;
 import com.bibliotheque.api.service.PretService;
 
 @RestController
 public class PretController {
 	@Autowired
 	private PretService pretService;
-	/*
-	@GetMapping("/Prets")
+	
+	@GetMapping("/Pret/{id}")
 	@ResponseBody
-	public Iterable<Pret> getPret(@RequestParam(value = "utilisateur", required = true) Integer id) {
-		return pretService.getpret();
-	}*/
+	public Optional<Pret> getPret(@PathVariable("id") final int id) {
+		return pretService.getPret(id);
+	}
 }
