@@ -21,4 +21,11 @@ public class PretController {
 	public Optional<Pret> getPret(@PathVariable("id") final int id) {
 		return pretService.getPret(id);
 	}
+	
+	@GetMapping("/Prolonger/{id}")
+	@ResponseBody
+	public Optional<Pret> getProlongation(@PathVariable("id")final int id) {
+		return pretService.saveProlongation(id);
+}
+
 }
