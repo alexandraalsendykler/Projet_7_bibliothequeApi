@@ -1,6 +1,7 @@
 package com.bibliotheque.api.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -8,8 +9,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+
 import com.bibliotheque.api.model.Utilisateur;
-import com.bibliotheque.api.repository.PretRepository;
+
 import com.bibliotheque.api.repository.UtilisateurRepository;
 import com.bibliotheque.api.service.UtilisateurService;
 
@@ -20,8 +23,7 @@ public class UtilisateurController {
 	private UtilisateurService utilisateurService;
 	@Autowired
 	private UtilisateurRepository utilisateurRepository;
-	@Autowired
-	PretRepository pretRepository;
+
 
 	@GetMapping("/password") // a virer à terme pour faire encryptage dans web
 	public void password() {
@@ -44,4 +46,9 @@ public class UtilisateurController {
 		return null;
 	}
 
+	@GetMapping("/user/{id}")
+	public Optional<Utilisateur> getId(@PathVariable("id") Integer id) {
+		return utilisateurService.getUtilisateur(id);
+
+	}
 }
