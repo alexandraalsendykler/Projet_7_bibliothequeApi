@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bibliotheque.api.model.Pret;
@@ -17,13 +16,11 @@ public class PretController {
 	private PretService pretService;
 	
 	@GetMapping("/Pret/{id}")
-	@ResponseBody
 	public Optional<Pret> getPret(@PathVariable("id") final int id) {
 		return pretService.getPret(id);
 	}
 	
 	@GetMapping("/Prolonger/{id}")
-	@ResponseBody
 	public Optional<Pret> getProlongation(@PathVariable("id")final int id) {
 		return pretService.saveProlongation(id);
 }
