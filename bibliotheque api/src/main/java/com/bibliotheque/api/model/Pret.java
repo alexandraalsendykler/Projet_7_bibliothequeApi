@@ -25,7 +25,7 @@ public class Pret {
 	private Date dateReservation;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateDeFin;
-	private Boolean disponibilite;
+	private String statut;
 
 	public Integer getId() {
 		return id;
@@ -51,12 +51,14 @@ public class Pret {
 		this.dateDeFin = dateDeFin;
 	}
 
-	public Boolean getDisponibilite() {
-		return disponibilite;
+
+	public String getStatut() {
+		return statut;
 	}
 
-	public void setDisponibilite(Boolean disponibilite) {
-		this.disponibilite = disponibilite;
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
-}
+	}
+
