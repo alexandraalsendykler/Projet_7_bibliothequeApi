@@ -35,7 +35,7 @@ public class LivreService {
 	}
 
 	public Iterable<Livre> getLivresSearch(String search) {
-		List<Livre> livres = livreRepository.findByTitreContainingOrAuteurContaining(search); // voir si syntaxe de la méthode correct à vérfier en test 
+		List<Livre> livres = livreRepository.findByTitreContainingOrAuteurContaining(search, search); // voir si syntaxe de la méthode correct à vérfier en test 
 		return livres; 
 	}
 

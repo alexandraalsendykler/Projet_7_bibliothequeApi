@@ -29,18 +29,6 @@ public class Pret {
 	private Date dateDeFin;
 	private String statut;
 
-	@ManyToOne
-	@JoinColumn(name = "idExemplaire")
-	private Exemplaire exemplaire;
-
-	public Exemplaire getExemplaire() {
-		return exemplaire;
-	}
-
-	public void setExemplaire(Exemplaire exemplaire) {
-		this.exemplaire = exemplaire;
-	}
-
 	public Integer getId() {
 		return id;
 	}

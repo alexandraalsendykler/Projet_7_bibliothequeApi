@@ -10,6 +10,6 @@ import com.bibliotheque.api.model.Livre;
 @Repository
 public interface LivreRepository extends CrudRepository <Livre, Integer> {
 
-	List<Livre> findByTitreContainingOrAuteurContaining(String search);
+	List<Livre> findByTitreContainingOrAuteurContaining(String search, String searchAuteur);
 
 }

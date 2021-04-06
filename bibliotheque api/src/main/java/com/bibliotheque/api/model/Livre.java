@@ -32,7 +32,7 @@ public class Livre {
 	private String resume;
 
 	@OneToMany
-	@JoinColumn(name = "idExemplaire")
+	@JoinColumn(name = "idLivre")
 	private List<Exemplaire> exemplaires;
 
 	public Integer getId() {

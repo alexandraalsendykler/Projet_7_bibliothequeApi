@@ -26,12 +26,8 @@ public class Exemplaire {
 
 	private Integer identifiant;
 
-	@ManyToOne
-	@JoinColumn(name = "idLivre")
-	private Livre livre;
-
 	@OneToMany
-	@JoinColumn(name = "idPret")
+	@JoinColumn(name = "idExemplaire")
 	private List<Pret> prets;
 
 	public List<Pret> getPrets() {
@@ -40,14 +36,6 @@ public class Exemplaire {
 
 	public void setPrets(List<Pret> prets) {
 		this.prets = prets;
-	}
-
-	public Livre getLivre() {
-		return livre;
-	}
-
-	public void setLivre(Livre livre) {
-		this.livre = livre;
 	}
 
 	public Integer getIdentifiant() {
