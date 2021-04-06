@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -26,6 +28,18 @@ public class Pret {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateDeFin;
 	private String statut;
+
+	@ManyToOne
+	@JoinColumn(name = "idExemplaire")
+	private Exemplaire exemplaire;
+
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
+	}
 
 	public Integer getId() {
 		return id;
@@ -51,7 +65,6 @@ public class Pret {
 		this.dateDeFin = dateDeFin;
 	}
 
-
 	public String getStatut() {
 		return statut;
 	}
@@ -60,5 +73,4 @@ public class Pret {
 		this.statut = statut;
 	}
 
-	}
-
+}

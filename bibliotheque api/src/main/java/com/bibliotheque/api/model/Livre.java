@@ -1,10 +1,14 @@
 package com.bibliotheque.api.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -27,8 +31,12 @@ public class Livre {
 
 	private String resume;
 
+	@OneToMany
+	@JoinColumn(name = "idExemplaire")
+	private List<Exemplaire> exemplaires;
+
 	public Integer getId() {
-		
+
 		return id;
 	}
 
@@ -58,6 +66,14 @@ public class Livre {
 
 	public void setResume(String resume) {
 		this.resume = resume;
+	}
+
+	public List<Exemplaire> getExemplaires() {
+		return exemplaires;
+	}
+
+	public void setExemplaires(List<Exemplaire> exemplaires) {
+		this.exemplaires = exemplaires;
 	}
 
 }
