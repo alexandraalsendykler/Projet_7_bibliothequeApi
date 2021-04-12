@@ -16,19 +16,14 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "livre")
-
 public class Livre {
 
 	@Id
 	@Column(name = "idLivre")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private Integer id;
-
 	private String titre;
-
 	private String auteur;
-
 	private String resume;
 
 	@OneToMany

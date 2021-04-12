@@ -22,7 +22,6 @@ public class Exemplaire {
 	@Id
 	@Column(name = "idExemplaire")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private Integer identifiant;
 
 	@OneToMany
