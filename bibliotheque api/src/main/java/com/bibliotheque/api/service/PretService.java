@@ -52,4 +52,9 @@ public class PretService {
 		}
 		return prets;
 	}
+
+	public Iterable<Pret> getDateDeFin(Date date) {
+		return pretRepository.findByDateDeFinBeforeAndStatutNotContaining(date, "terminé");
+	}
+
 }
