@@ -26,20 +26,3 @@ public class LivreController {
 	}
 
 }
-
-//@GetMapping(value = "/recherchesites")
-//public String rechercheSites(Model model, @RequestParam String searchsites,
-// @RequestParam(required = false) Boolean officiel) {
-// if (officiel != null) {
-// List<Site> sites =
-// siteRepository.findByRegionContainingOrNomContainingAndOfficiel(searchsites,searchsites,
-// officiel);
-// model.addAttribute("sites", sites);
-// } else {
-
-// List<Site> sites =
-// siteRepository.findByRegionContainingOrNomContaining(searchsites,searchsites);
-// model.addAttribute("sites", sites);
-// }
-
-// return ("rechercheSites");

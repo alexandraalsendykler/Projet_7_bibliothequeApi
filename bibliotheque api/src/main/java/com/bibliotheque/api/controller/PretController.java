@@ -28,7 +28,7 @@ public class PretController {
 	@GetMapping("/DateDeFin")
 	public Iterable<Pret> getDateDeFin() {
 		Date date = new Date();
-		
+
 		return pretService.getDateDeFin(date);
 	}
 }

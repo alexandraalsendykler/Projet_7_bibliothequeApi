@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.bibliotheque.api.model.Pret;
 import com.bibliotheque.api.model.Utilisateur;
 import com.bibliotheque.api.repository.UtilisateurRepository;
 
@@ -39,9 +37,4 @@ public class UtilisateurService {
 		Utilisateur saveUtilisateur = utilisateurRepository.save(utilisateur);
 		return saveUtilisateur;
 	}
-
-/*	public Optional<Utilisateur> findAllByPret(Pret pret) {
-		return utilisateurRepository.findAllByPret(pret);
-	} */
-
 }

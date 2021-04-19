@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.bibliotheque.api.model.Utilisateur;
 
 import com.bibliotheque.api.repository.UtilisateurRepository;
@@ -23,7 +22,6 @@ public class UtilisateurController {
 	private UtilisateurService utilisateurService;
 	@Autowired
 	private UtilisateurRepository utilisateurRepository;
-
 
 	@GetMapping("/password") // a virer à terme pour faire encryptage dans web
 	public void password() {
@@ -51,6 +49,5 @@ public class UtilisateurController {
 		return utilisateurService.getUtilisateur(id);
 
 	}
-	
 
 }
