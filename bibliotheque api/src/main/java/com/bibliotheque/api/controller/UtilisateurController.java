@@ -52,8 +52,5 @@ public class UtilisateurController {
 
 	}
 	
-	@GetMapping("/user/{Pret}")
-	public Optional<Utilisateur> findAllByPret(@PathVariable (pret("id") Integer id){
-		return utilisateurService.findAllByPret(pret);
-	}
+
 }

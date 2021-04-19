@@ -40,8 +40,8 @@ public class UtilisateurService {
 		return saveUtilisateur;
 	}
 
-	public Optional<Utilisateur> findAllByPret(Pret pret) {
+/*	public Optional<Utilisateur> findAllByPret(Pret pret) {
 		return utilisateurRepository.findAllByPret(pret);
-	}
+	} */
 
 }

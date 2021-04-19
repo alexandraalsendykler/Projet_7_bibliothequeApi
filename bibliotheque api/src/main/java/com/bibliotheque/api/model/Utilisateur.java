@@ -13,10 +13,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import lombok.Data;
 
 @Data
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 @Table(name = "utilisateur")
 public class Utilisateur {
 	@Id
@@ -27,7 +32,7 @@ public class Utilisateur {
 	private String nom;
 	private String email;
 	private String motDePasse;
-	
+
 	@OneToMany(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "idUtilisateur")
 	private List<Pret> prets = new ArrayList<>(); 

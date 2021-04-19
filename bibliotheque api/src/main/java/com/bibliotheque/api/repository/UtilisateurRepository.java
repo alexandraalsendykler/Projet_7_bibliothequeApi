@@ -12,5 +12,5 @@ import com.bibliotheque.api.model.Utilisateur;
 public interface UtilisateurRepository extends CrudRepository<Utilisateur, Integer> {
 	List<Utilisateur> findByEmail(String email);
 
-	Optional<Utilisateur> findAllByPret(Pret pret);
+	//Optional<Utilisateur> findAllByPret(Pret pret);
 }
