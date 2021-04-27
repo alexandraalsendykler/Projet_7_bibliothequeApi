@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Data;
@@ -32,9 +34,9 @@ public class Utilisateur {
 	private String email;
 	private String motDePasse;
 
-	@OneToMany(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "idUtilisateur")
-	private List<Pret> prets = new ArrayList<>();
+	@OneToMany(cascade = { CascadeType.ALL },fetch = FetchType.LAZY,mappedBy = "utilisateur")
+	@JsonIgnoreProperties("utilisateur")
+	private List<Pret> prets ;
 
 	public List<Pret> getPrets() {
 		return prets;

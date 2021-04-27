@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
@@ -29,8 +32,21 @@ public class Pret {
 	private String statut;
 
 	@ManyToOne
+	@JsonIgnoreProperties("prets")
 	@JoinColumn(name = "idUtilisateur")
 	private Utilisateur utilisateur;
+	@ManyToOne
+	@JsonIgnoreProperties("pret")
+	@JoinColumn(name = "idExemplaire")
+	private Exemplaire exemplaire;
+
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
+	}
 
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
