@@ -46,6 +46,7 @@ public class PretService {
 			calendar.setTime(dateDeFin);
 			calendar.add(Calendar.DAY_OF_YEAR, quatreSemaines);
 			Date newDateDeFin = calendar.getTime();
+			pret.setStatut("prolongé");
 			pret.setDateDeFin(newDateDeFin);
 			pretRepository.save(pret);
 			return Optional.of(pret);
