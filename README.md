@@ -17,9 +17,13 @@ Pré-requis : GDK8, un IDE (Eclipse par exemple), Maven installé sur votre mach
 5) Ouvrir le fichier application.properties et rentrer les données ci-dessous (au besoin adapter avec vos propres informations de connexion) :
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/bibliotheque
+
 spring.datasource.username=postgres
+
 spring.datasource.password=alex160383
+
 spring.jpa.show-sql=true
+
 server.port=9001
 
 6) Faire run as, lancer la commande spring-boot : run
