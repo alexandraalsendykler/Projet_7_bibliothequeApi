@@ -18,9 +18,9 @@ Pré-requis : JDK8, un IDE (Eclipse par exemple), Maven installé sur votre mach
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/bibliotheque
 
-spring.datasource.username=postgres
+spring.datasource.username= utilisez votre identifiant quand la base de données a été installée
 
-spring.datasource.password=alex160383
+spring.datasource.password= utilisez votre password quand la base de données a été installée
 
 spring.jpa.show-sql=true
 
