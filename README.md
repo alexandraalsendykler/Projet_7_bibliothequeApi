@@ -1,4 +1,4 @@
-Pré-requis : GDK8, un IDE (Eclipse par exemple), Maven installé sur votre machine, un gestionnaire de données (PgAdmin par exemple).
+Pré-requis : JDK8, un IDE (Eclipse par exemple), Maven installé sur votre machine, un gestionnaire de données (PgAdmin par exemple).
 
 1) Télécharger le fichier backup_bibliotheque_structure.sql et le sauvegarder dans le répertoir de votre choix
 
